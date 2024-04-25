@@ -6,11 +6,13 @@ import asyncio
 
 async_generator = __import__("0-async_generator").async_generator
 
+
 async def async_comprehension() -> List[float]:
     """
-    Coroutine qui utilise une compréhension asynchrone pour collecter 10 nombres aléatoires
+    Coroutine qui utilise une compréhension
+    asynchrone pour collecter 10 nombres aléatoires
     en utilisant async_generator, puis retourne les 10 nombres aléatoires.
-    
+
     Returns:
         List[float]: La liste des 10 nombres aléatoires.
     """
