@@ -3,13 +3,14 @@ import asyncio
 import random
 from typing import List
 
+
 async def wait_random(max_delay: int = 10) -> float:
     """
     Asynchronous coroutine that waits for a random delay between 0 and max_delay seconds and returns it.
-    
+
     Args:
         max_delay (int, optional): The maximum delay in seconds (default is 10).
-        
+
     Returns:
         float: The random delay.
     """
@@ -19,13 +20,14 @@ async def wait_random(max_delay: int = 10) -> float:
 
 async def wait_n(n: int, max_delay: int) -> List[float]:
     """
-    Asynchronous routine that spawns wait_random n times with the specified max_delay
+    Asynchronous routine that spawns wait_random
+    n times with the specified max_delay
     and returns the list of all the delays in ascending order.
-    
+
     Args:
         n (int): The number of times to call wait_random.
         max_delay (int): The maximum delay in seconds for each wait_random call.
-        
+
     Returns:
         List[float]: The list of all delays in ascending order.
     """
