@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+"""Module with fonction that converts float to string"""
 def to_str(n: float) -> str:
     """
     Prend un argument de type float et renvoie

@@ -1,4 +1,6 @@
 #!/usr/bin/env python3
+"""Module with function that takes a list of strings and
+returns a list of tuples containing each string and its length"""
 from typing import List, Tuple
 
 

@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+"""module with function sum_list"""
 """function sum_list which takes a list input_list of floats as argument"""
 from typing import List
 

@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+"""Module with fonction that concatenates two strings"""
 def concat(str1: str, str2: str) -> str:
     """
     Prend deux arguments de type chaîne de caractères et renvoie leur

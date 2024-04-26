@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+"""Module with foction that coverts int or float to tuple"""
 from typing import Union, Tuple
 
 
