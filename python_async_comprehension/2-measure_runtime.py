@@ -29,9 +29,3 @@ async def measure_runtime() -> float:
     return total_runtime
 
 
-async def main():
-    total_runtime = await measure_runtime()
-    print(f"Total runtime: {total_runtime} seconds")
-
-
-asyncio.run(main())

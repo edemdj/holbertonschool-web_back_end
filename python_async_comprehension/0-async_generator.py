@@ -13,8 +13,4 @@ async def async_generator():
         yield random.uniform(0, 10)
 
 
-async def main():
-    async for num in async_generator():
-        print(num)
 
-asyncio.run(main())

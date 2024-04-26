@@ -21,9 +21,3 @@ async def async_comprehension() -> List[float]:
     return random_numbers
 
 
-async def main():
-    numbers = await async_comprehension()
-    print(numbers)
-
-
-asyncio.run(main())
