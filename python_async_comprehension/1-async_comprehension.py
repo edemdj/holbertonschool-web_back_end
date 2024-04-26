@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+"""coroutine called async_comprehension that takes no arguments"""
 from typing import List
 import random
 import asyncio
@@ -19,5 +20,3 @@ async def async_comprehension() -> List[float]:
 
     random_numbers = [number async for number in async_generator()]
     return random_numbers
-
-
