@@ -1,0 +1,13 @@
+{
+    "name": "es6_basic",
+    "version": "1.0.0",
+    "description": "",
+    "main": "0-main.js",
+    "type": "module",
+    "scripts": {
+      "dev": "node 0-main.js"
+    },
+    "author": "",
+    "license": "ISC"
+  }
+  
