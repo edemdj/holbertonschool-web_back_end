@@ -5,6 +5,6 @@
   "main": "0-main.js",
   "type": "module",
   "scripts": {
-    "dev": "node 0-main.js"
+    "dev": "node 10-main.js"
   }
 }
