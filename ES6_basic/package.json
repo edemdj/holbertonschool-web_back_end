@@ -5,7 +5,7 @@
     "main": "0-main.js",
     "type": "module",
     "scripts": {
-      "dev": "node 8-main.js"
+      "dev": "node 9-main.js"
     },
     "author": "",
     "license": "ISC"
