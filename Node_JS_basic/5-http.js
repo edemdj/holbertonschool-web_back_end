@@ -1,12 +1,10 @@
 const http = require('http');
 const url = require('url');
-const countStudents = require('./3-read_file_async');
 const fs = require('fs');
-
+const countStudents = require('./3-read_file_async');
 
 const app = http.createServer((req, res) => {
   const parsedUrl = url.parse(req.url, true);
-
 
   res.writeHead(200, { 'Content-Type': 'text/plain' });
 
@@ -29,7 +27,6 @@ const app = http.createServer((req, res) => {
       res.end();
     }
   } else {
-
     res.writeHead(404, { 'Content-Type': 'text/plain' });
     res.end('404 Not Found');
   }

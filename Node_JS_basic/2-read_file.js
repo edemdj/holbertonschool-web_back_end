@@ -14,14 +14,14 @@ function countStudents(path) {
 
     // Extract header and student data
     const headers = rows[0].split(',');
-    const students = rows.slice(1).map(row => row.split(','));
+    const students = rows.slice(1).map((row) => row.split(','));
 
     // Count total number of students
     console.log(`Number of students: ${students.length}`);
 
     // Group students by their field of study
     const fields = {};
-    students.forEach(student => {
+    students.forEach((student) => {
       const field = student[3]; // Assuming the field of study is in the 4th column
       const firstName = student[0]; // Assuming first name is in the 1st column
 
@@ -35,7 +35,6 @@ function countStudents(path) {
     for (const [field, firstNames] of Object.entries(fields)) {
       console.log(`Number of students in ${field}: ${firstNames.length}. List: ${firstNames.join(', ')}`);
     }
-
   } catch (error) {
     throw new Error('Cannot load the database');
   }
