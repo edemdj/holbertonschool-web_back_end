@@ -52,25 +52,15 @@ def forbidden_error(error) -> str:
 
 @app.before_request
 def before_request():
-    """
-    if auth is None, do nothing
-    if request.path is not part of this list
-    ['/api/v1/status/', '/api/v1/unauthorized/', '/api/v1/forbidden/'],
-    do nothing - you must use the method require_auth from the auth instance
-    if auth.authorization_header(request) returns None,
-    raise the error 401 - you must use abort
-    if auth.current_user(request) returns None, raise the error 403 -
-    you must use abort
-    """
-    print(f"Debug: auth = {auth}")
-
     if auth is None:
         return
 
-    excluded_paths = ['/api/v1/status/',
-                      '/api/v1/unauthorized/',
-                      '/api/v1/forbidden/',
-                      '/api/v1/auth_session/login/']
+    excluded_paths = [
+        '/api/v1/status/',
+        '/api/v1/unauthorized/',
+        '/api/v1/forbidden/',
+        '/api/v1/auth_session/login/'
+    ]
 
     if not auth.require_auth(request.path, excluded_paths):
         return
@@ -79,14 +69,12 @@ def before_request():
         auth.authorization_header(request) is None
         and auth.session_cookie(request) is None
     ):
-        print("Debug: No Authorization header r Session cookie found")
         abort(401)
 
+    # Assigne une seule fois
     request.current_user = auth.current_user(request)
-    print(f"Debug: request.current_user = {request.current_user}")
 
-    if auth.current_user(request) is None:
-        print("Debug: current_user() returned None")
+    if request.current_user is None:
         abort(403)
 
 

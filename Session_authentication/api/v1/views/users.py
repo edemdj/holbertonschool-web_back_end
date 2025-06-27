@@ -121,11 +121,13 @@ def update_user(user_id: str = None) -> str:
     user.save()
     return jsonify(user.to_json()), 200
 
-@app_views.route('/users/me', methods=['GET'], strict_slashes=False)
-def get_me():
-    """GET /api/v1/users/me: returns user info for current user"""
-    from api.v1.app import auth
-    user = auth.current_user(request)
+@app_views.route('/users/<user_id>', methods=['GET'], strict_slashes=False)
+def get_user(user_id):
+    if user_id == "me":
+        if not hasattr(request, "current_user") or request.current_user is None:
+            abort(404)
+        return jsonify(request.current_user.to_json())
+    user = User.get(user_id)
     if user is None:
         abort(404)
     return jsonify(user.to_json())
