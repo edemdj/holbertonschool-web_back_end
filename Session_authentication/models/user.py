@@ -33,15 +33,11 @@ class User(Base):
         else:
             self._password = hashlib.sha256(pwd.encode()).hexdigest().lower()
 
-    def is_valid_password(self, pwd: str) -> bool:
-        """ Validate a password
-        """
-        if pwd is None or type(pwd) is not str:
+    def is_valid_password(self, password):
+        if password is None or not isinstance(password, str):
             return False
-        if self.password is None:
-            return False
-        pwd_e = pwd.encode()
-        return hashlib.sha256(pwd_e).hexdigest().lower() == self.password
+        hash_pwd = hashlib.sha256(password.encode()).hexdigest().lower()
+        return hash_pwd == self._password
 
     def display_name(self) -> str:
         """ Display User name based on email/first_name/last_name
