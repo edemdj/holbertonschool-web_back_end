@@ -34,6 +34,7 @@ class User(Base):
             self._password = hashlib.sha256(pwd.encode()).hexdigest().lower()
 
     def is_valid_password(self, password):
+        " Check if the password is valid for this User instance"
         if password is None or not isinstance(password, str):
             return False
         hash_pwd = hashlib.sha256(password.encode()).hexdigest().lower()
