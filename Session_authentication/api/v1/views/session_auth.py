@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-""" Session Authentication view """
+""" Module for session authentication routes and endpoints. """
 
 from flask import Blueprint, request, jsonify, make_response, abort
 from models.user import User
