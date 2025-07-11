@@ -17,7 +17,7 @@ def view_all_users() -> str:
 
 @app_views.route('/users/<user_id>', methods=['GET'], strict_slashes=False)
 def get_user(user_id):
-    " GET /api/v1/users/<user_id> get a User by ID"
+    " GET /api/v1/users/<user_id> get a User by ID "
     print("DEBUG: request.current_user:", getattr(request, "current_user", None))
     if user_id == "me":
         if not hasattr(request, "current_user") or request.current_user is None:
